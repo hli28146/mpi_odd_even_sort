@@ -35,3 +35,38 @@ mpiexec test
 
 ## 2. Linux
 
+项目文件夹下编译运行源文件mpi_odd_even_sort.c
+
+```bash
+mpicc mpi_odd_even_sort.c -o mpi_odd_even_sort
+
+mpirun mpi_odd_even_sort
+```
+
+# 输入说明
+
+待排序序列在input.txt中存放。
+
+待排序序列为INT类型，取值范围(INT32_MIN = -2147483648 , INT32_MAX = 2147483647)
+
+待排序序列由项目中generate_input.py代码随机生成，详见源文件
+
+**注**：
+
+如果文件中出现非数字字符，程序将对非数字字符之前的数字序列进行排序。如：
+
+```
+//input.txt
+-768142071 ssss dddd
+-339388778
+...
+
+//stdout
+>>mpiexec -n 8 .\mpi_odd_even_sort.exe
+实际读取数据量: 1 
+排序后的序列 (1 个元素):
+-768142071
+```
+
+# 项目结构
+
