@@ -1,3 +1,4 @@
+详见README.md
 # 运行程序
 
 ## 1. Windows操作系统
